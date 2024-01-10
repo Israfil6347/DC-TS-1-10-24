@@ -1,0 +1,51 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get My Accounts Request
+# @name getDcBankAccounts
+POST {{host}}/deposits_V1/getDcBankAccounts
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client"
+}
+
+## Encrypted Request Data
+# {
+#     "Data": [
+#   {
+#     "BankId": "1",
+#     "BankName": "One Bank Ltd.",
+#     "BankAccNumber": "0125080430002",
+#     "BankRoutingNo": "165262538",
+#     "BankBranch": "krawnbazar "
+#   },
+# ],
+#     "Status": "success",
+#     "Message": null
+# }

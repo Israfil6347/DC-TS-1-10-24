@@ -1,0 +1,19 @@
+export class AccountModel {
+  AccountHolderName?: string = '';
+  AccHolderName?: string = '';
+  AccountNumber: string = '';
+  AccountNo: string = '';
+  AccountTypeName: string = '';
+  AccountTypeCode: string = '';
+  AccountNominee: string = '';
+  DCAccountNo: string = '';
+  UserId: number = 0;
+  RolePermissionId: string = '';
+  Balance: number = 0;
+  WithdrawableBalance: number = 0;
+  AccountId: number = 0;
+  LedgerId: number = 0;
+  LastPaidDate: string = '';
+  MaturityDate: string = '';
+  IsDefaulter: boolean = false;
+}

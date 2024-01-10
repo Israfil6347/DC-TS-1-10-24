@@ -1,0 +1,51 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Eligible Loan Products Request
+# @name getEligibleLoanProducts
+POST {{host}}/loans_v1/getEligibleLoanProducts
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "AccountNo": "Not found.",
+  "Gender": "M",
+  "MobileNo": "{{MobileNumber}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "RolePermissionId": "6,1,1209,1210",
+  "ByUserId": 10,
+  "UID": "{{ByUserId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "PersonId": 12345
+}
+
+## Response
+{
+    "Data":  [{
+        "ProductId": 46,
+        "LoanProductCode": "44 ",
+        "LoanProductName": "Loan Against Pension Benfit Scheme",
+        "InterestRate": 12,
+        "InterestType": 0,
+        "IsEligible": true
+    }],
+    "Status": "success",
+    "Message": null
+}

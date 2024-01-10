@@ -1,0 +1,65 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Loan Details Request
+# @name getLoanDetails
+POST {{host}}/loans_v1/getLoanDetails
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "LoanId": "D20230823106620"
+}
+
+# Response
+{
+  "Data": [
+    {
+      "LoanNumber": "D20230823106623",
+      "IsDefaulter": false,
+      "LoanType": "Instant Loan",
+      "LoaneeName": "BAPPY BESRA",
+      "IssuedDate": "2023/08/23",
+      "IssuedAmount": 20000,
+      "InterestRate": 15,
+      "LastPaidDate": "2023/08/23",
+      "Days": 1,
+      "IsLastPaidDate": 0,
+      "ModuleCode": "61",
+      "LoanBalance": 20000,
+      "Installment": "180 Days",
+      "LoanRefundAmount": 3340,
+      "LoanStatus": "Regular",
+      "LoanEndDate": "2024-02-18T17:47:08.023",
+      "LoanProductCode": "50 ",
+      "DefaultDetails": null
+    }
+  ],
+  "Status": "success",
+  "Message": null
+}

@@ -1,0 +1,44 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Accept Fallback Request
+# @name acceptFallbackRequest
+POST {{host}}/professionals_v1/acceptFallbackRequest
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "LeaveApplicationId": 33,
+  "Remarks": "something",
+  "ByUserId": 10,
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNo": "{{MobileNumber}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "PersonId": "{{PersonId}}",
+  "RolePermissionId": "6,1,1210,1209",
+  "UID": "{{ByUserId}}",
+  "UserName": "{{UserName}}"
+}
+
+## Response
+# {
+#     "Data": "success",
+#     "Status": "success",
+#     "Message": null
+# }

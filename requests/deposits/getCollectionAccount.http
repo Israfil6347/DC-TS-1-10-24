@@ -1,0 +1,79 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Collection Ledgers Request
+# @name getCollectionAccount
+POST {{host}}/deposits_V1/getCollectionAccount
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "ModuleCode": "16",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "SearchText": "0050725"
+}
+
+## Response
+# {
+#   "Data": {
+#     "AccountInfoList": [
+#       {
+#         "AccountNo": "0050725       ",
+#         "AccountName": null,
+#         "AccountType": "Share Account",
+#         "PersonalLedgerType": 0,
+#         "PersonalLedgerId": 0,
+#         "LedgerId": 1486,
+#         "Amount": 10,
+#         "Balance": 0,
+#         "AccountId": 234265,
+#         "LoanAccountList": null,
+#         "IsDefaulter": false,
+#         "IsSubLedger": false,
+#         "IsMultiplier": true,
+#         "IsNotEditable": false,
+#         "AccountTypeCode": "10",
+#         "PlType": 1,
+#         "Sort": 0,
+#         "MiscId": 0,
+#         "IsLps": false,
+#         "ServiceId": 0
+#       }
+#     ],
+#     "AccountHolderInfo": [
+#       {
+#         "FullName": "NEWTON MITRA",
+#         "FathersName": " DAVID MOHENDRA MISTRI  ",
+#         "MothersName": "",
+#         "PersonId": 63786,
+#         "Gender": "M"
+#       }
+#     ]
+#   },
+#   "Status": "success",
+#   "Message": null
+# }

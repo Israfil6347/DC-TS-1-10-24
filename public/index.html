@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Dhaka Credit Web Portal" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title id="pageTitle">Dhaka Credit</title>
+  </head>
+  <body>
+    <script>
+      var isLoggedIn = localStorage.getItem('token');
+      console.log(isLoggedIn);
+      var titleElement = document.getElementById('pageTitle');
+      if (isLoggedIn !== null) {
+        titleElement.textContent = 'icoopERP | Dhaka Credit';
+      }
+    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="portal"></div>
+  </body>
+</html>

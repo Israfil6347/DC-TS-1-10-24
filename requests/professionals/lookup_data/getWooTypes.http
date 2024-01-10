@@ -1,0 +1,50 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Woo Types Request
+# @name getWooTypes
+POST {{host}}/professionals_v1/GetWoooType
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+
+{
+  "UserName": "bappy.besra@cccul.com",
+  "UID": 15,
+  "ByUserId": 15,
+  "PersonId": 64025,
+  "EmployeeCode": "1185",
+  "MobileNumber": "+880-1815458842",
+  "MobileNo": "+880-1815458842",
+  "Client": "Web Client",
+  "RolePermissionId": " 171430"
+}
+
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "LeaveTypeCode": "01",
+#       "LeaveType": "Earn Leave"
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

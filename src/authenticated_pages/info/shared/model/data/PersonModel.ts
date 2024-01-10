@@ -1,0 +1,45 @@
+import { FamilyAndRelativeModel } from "authenticated_pages/info/family_and_relatives/model/data/FamilyAndRelativeModel";
+import { AttachmentModel } from "./AttachmentModel";
+import { TrainingAndEducationModel } from "./TrainingAndEducationModel";
+import { WorkPlaceModel } from "./WorkPlaceModel";
+
+export class PersonModel {
+  PersonId: number = 0;
+  FullName: string = "";
+  DateOfBirth: string = "";
+  SpouseName: string = "";
+  BloodGroup: string = "";
+  Gender: string = "";
+  MaritalStatus: string = "";
+  Religion: string = "";
+  Nationality: string = "";
+  NID: string = "";
+  Occupation: string = "";
+  FathersName: string = "";
+  MothersName: string = "";
+  PermanentAddressLine1: string = "";
+  PermanentAddressLine2: string = "";
+  PermanentAddressLine4: string = "";
+  PermanentAddressLine5: string = "";
+  PresentAddressLine1: string = "";
+  PresentAddressLine2: string = "";
+  PresentAddressLine3: string = "";
+  PresentAddressLine4: string = "";
+  PresentAddressLine5: string = "";
+  PersonPhoto: string = "";
+  JobLocation: string = "";
+  BirthDistrictName: string = "";
+  ParishName: string = "";
+  CustName: string = "";
+  Remarks: string = "";
+  OrganizationName: string = "";
+  PermanentAddress: string = "";
+  PresentAddress: string = "";
+  MobileNumber: string = "";
+  RegisteredMobile: string = "";
+  OtherMobileNumber: string = "";
+  PersonAttachments: AttachmentModel[] = [];
+  PersonEducationTrainingDetails: TrainingAndEducationModel[] = [];
+  PersonWorkDetails: WorkPlaceModel[] = [];
+  PersonFamilyDetails: FamilyAndRelativeModel[] = [];
+}

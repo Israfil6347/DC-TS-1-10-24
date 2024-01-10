@@ -1,0 +1,31 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Religions Request
+# @name get_religions
+POST {{host}}/recrutements_v1/GetAllReligions
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

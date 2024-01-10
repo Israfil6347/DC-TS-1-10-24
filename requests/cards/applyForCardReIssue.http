@@ -1,0 +1,44 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Apply For Card Re-Issue Request
+# @name applyForCardReIssue
+POST {{host}}/cards_V1/applyForCardReIssue
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "CardNumber": "0000000000000000",
+  "CardTypeCode": "01",
+  "IsVirtual": true,
+  "NameOnCard": "name_on_card",
+  "MobileNumber": "{{MobileNumber}}",
+  "RolePermissionId": "6,1,1210,1209",
+  "ByUserId": 10,
+  "EmployeeCode": "{{EmployeeCode}}",
+  "PersonId": 12345
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

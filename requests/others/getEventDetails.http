@@ -1,0 +1,14 @@
+### Event Message Request
+# @name get-event-details
+POST {{host}}/others_v1/getEventDetails
+Content-Type: application/json
+Accept: application/json
+
+
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

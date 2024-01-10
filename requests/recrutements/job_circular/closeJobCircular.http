@@ -1,0 +1,36 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Close Job Circular Request
+# @name close_job_circular
+POST {{host}}/recrutements_v1/CloseJobCircular
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+    "jobCircularId": 9,
+    "updatedBy": 1
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

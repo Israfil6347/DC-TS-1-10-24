@@ -1,0 +1,25 @@
+export class JobApplicationModel {
+  ApplicantFullName: string = "";
+  Gender: string = "";
+  Age: number = 0;
+  MaritalStatus: string = "";
+  PresentAddress: string = "";
+  TotalExperience: number = 0;
+  LatestEducation: string = "";
+  MobileNumber: string = "";
+  Religion: string = "";
+  AppliedPosition: string = "";
+  JobApplicationStatus: string = "";
+  JobApplicationId: number = 0;
+  JobCircularId: number = 0;
+  EmploymentStatus: string = "";
+  NoticePeriod: string = "";
+  ExpectedSalary: number = 0;
+  AttachedResume: string = "";
+  CoverLetter: string = "";
+  JobApplicationStatusId: number = 0;
+  DeclaredInformationAreCorrect: boolean = false;
+  CreatedAt: string = "";
+  ModifiedAt: string = "";
+  Remarks: string = "";
+}

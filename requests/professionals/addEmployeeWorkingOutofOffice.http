@@ -1,0 +1,49 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### AddEmployeeWorkingOutofOffice Request
+# @name AddEmployeeWorkingOutofOffice
+POST {{host}}/professionals_v1/AddEmployeeWorkingOutofOffice
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "bappy.besra@cccul.com",
+  "UID": 15,
+  "ByUserId": 15,
+  "PersonId": 64025,
+  "EmployeeCode": "1185",
+  "MobileNumber": "+880-1815458842",
+  "MobileNo": "+880-1815458842",
+  "Client": "Web Client",
+  "RolePermissionId": " 171430",
+  "FromDate": "Sep 6, 2023 00:00:00",
+  "ToDate": "Sep 6, 2023 01:00:00",
+  "RejoiningDate": "Sep 6, 2023 01:00:00",
+  "Reason": "fgdfg",
+  "WoooTypeCode": "28",
+  "isHourly": true
+}
+
+## Response
+# {
+#     "Data": "Your leave application has been added.",
+#     "Status": "success",
+#     "Message": null
+# }

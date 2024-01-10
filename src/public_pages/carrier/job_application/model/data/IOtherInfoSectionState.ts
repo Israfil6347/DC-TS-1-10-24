@@ -1,0 +1,41 @@
+export interface IOtherInfoSectionState {
+  OtherSkills: string;
+  Interests: string;
+  VolunteeredOrganizations: string;
+  WillingToJoinAnyDepartmentOrServiceCenter: boolean;
+  WillingToTransferAnyDepartmentOrServiceCenter: boolean;
+  WillingToTravelAnyWhere: boolean;
+  MemberOfDhakaCredit: boolean;
+  DhakaCreditRelativeEmployeeName: string;
+  DhakaCreditRelativeEmployeePosition: string;
+  DhakaCreditRelativeEmployeeRelationshipId: number;
+  DhakaCreditRelativeEmployeeRelationshipName: string;
+  DhakaCreditRelativeEmployeeContactNo: string;
+  PreviouslyCalledForPosition: string;
+  PreviouslyCalledForApplicationDate: string;
+  AnyObjectionForMakingInquiriesOfYou: boolean;
+  HaveAnyPhysicalOrMentalDisabilities: boolean;
+  DisabilityDetails: string;
+  EverConvictedCrime: boolean;
+  CrimeDetails: string;
+  Errors: {
+    OtherSkills: string;
+    Interests: string;
+    VolunteeredOrganizations: string;
+    WillingToJoinAnyDepartmentOrServiceCenter: string;
+    WillingToTransferAnyDepartmentOrServiceCenter: string;
+    WillingToTravelAnyWhere: string;
+    MemberOfDhakaCredit: string;
+    DhakaCreditRelativeEmployeeName: string;
+    DhakaCreditRelativeEmployeePosition: string;
+    DhakaCreditRelativeEmployeeRelationshipId: string;
+    DhakaCreditRelativeEmployeeContactNo: string;
+    PreviouslyCalledForPosition: string;
+    PreviouslyCalledForApplicationDate: string;
+    AnyObjectionForMakingInquiriesOfYou: string;
+    HaveAnyPhysicalOrMentalDisabilities: string;
+    DisabilityDetails: string;
+    EverConvictedCrime: string;
+    CrimeDetails: string;
+  };
+}

@@ -1,0 +1,27 @@
+export class LoanAccountModel {
+  AccountNo: string = "";
+  Installment: number = 0;
+  InterestRate: number = 0;
+  Days: number = 0;
+  AccountName: string = "";
+  ModuleCode: string = "";
+  IssuedAmount: number = 0;
+  LoanBalance: number = 0;
+  LoanRefundAmount: number = 0;
+  LoanId: string = "";
+  LoanStatus: string = "";
+  AccountTypeName: string = "";
+  LoanType: string = "";
+  DCAccountNo: string = "";
+  UserId: number = 0;
+  RolePermissionId: string = "";
+  Balance: number = 0;
+  WithdrawableBalance: number = 0;
+  AccountId: number = 0;
+  LedgerId: number = 0;
+  AccountNominee: string = "";
+  LastPaidDate: string = "";
+  MaturityDate: string = "";
+  IssuedDate: string = "";
+  IsDefaulter: boolean = false;
+}

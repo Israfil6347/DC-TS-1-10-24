@@ -1,0 +1,59 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get My Attendances Request
+# @name getMyAttendances
+POST {{host}}/professionals_v1/getMyAttendances
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "FromDate": "Aug 01, 2023",
+  "ToDate": "Aug 31, 2023"
+}
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "Remarks": "Absent",
+#       "DepartmentName": "ICT",
+#       "DesignationName": "Network Engineer",
+#       "BranchName": "Head Office",
+#       "EmployeeName": "BAPPY BESRA",
+#       "AttendanceDate": "2023-07-09T00:00:00",
+#       "PunchArea": "Head Office",
+#       "ScheduleType": "Standard",
+#       "Status": "A",
+#       "WorkHour": "00:00",
+#       "EmployeeCode": "1185"
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

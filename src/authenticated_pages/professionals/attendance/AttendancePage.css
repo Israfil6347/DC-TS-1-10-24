@@ -1,0 +1,22 @@
+.fc-day-fri {
+  color: red;
+}
+.fc-event-title-container {
+  background-color: #242269;
+}
+.fc-today-button {
+  background-color: #242269 !important;
+}
+fc-today-button:hover {
+  background-color: #0a2947 !important;
+}
+.fc-prev-button {
+  background-color: #242269 !important;
+}
+fc-prev-button:hover {
+  background-color: #0a2947 !important;
+}
+.fc-next-button {
+  background-color: #242269 !important;
+}
+/* className="fc-col-header-cell fc-day fc-day-fri" */

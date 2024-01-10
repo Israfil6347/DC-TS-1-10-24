@@ -1,0 +1,52 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Search Employee Request
+# @name searchEmployee
+POST {{host}}/professionals_v1/searchEmployee
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": 21,
+  "ByUserId": 21,
+  "RolePermissionId": "6,1,1210",
+  "PersonId": 63786,
+  "EmployeeCode": "1180",
+ "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "searchText": "1322"
+}
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "FullName": "MD. ISRAFIL | 1322 ",
+#       "DateOfBirth": "1992-07-01T00:00:00",
+#       "EmployeeId": 0,
+#       "PersonId": 83138,
+#       "EmployeeCode": "1322"
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

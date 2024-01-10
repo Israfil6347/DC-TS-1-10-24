@@ -1,0 +1,46 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Add Family Or Relative Request
+# @name add_family_or_relative
+POST {{host}}/info_V1/addFamilyOrRelative
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+ {
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": 2643,
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "ChildPersonId": 2643,
+  "RelationTypeCode": "09",
+  "SearchText": "5085"
+}
+
+## Response
+# {
+#     "Data": "Selected person will be added in your "Family and Relatives" after confirmation from authority.",
+#     "Status": "success",
+#     "Message": null
+# }

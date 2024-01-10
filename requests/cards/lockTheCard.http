@@ -1,0 +1,45 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Lock The Card Request
+# @name lockTheCard
+POST {{host}}/cards_V1/lockTheCard
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "CardNo": "0010101700633668",
+  "NameOnCard": "name_on_card",
+  "AccountNo": "0050725 ",
+  "MobileNumber": "{{MobileNumber}}",
+  "RolePermissionId": "6,1,1209,1210",
+  "ByUserId": 10,
+  "EmployeeCode": "{{EmployeeCode}}",
+  "PersonId": 12345
+}
+
+
+
+# Response
+# {
+#     "Data": "our card has been blocked. Please contact with 09678156156 for further assistance.",
+#     "Status": "success",
+#     "Message": null
+# }

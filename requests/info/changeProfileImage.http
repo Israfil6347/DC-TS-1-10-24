@@ -1,0 +1,42 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Change Profile Image Request
+# @name change_profile_image
+POST {{host}}/info_V1/changeProfileImage
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "ImageName": "",
+  "MobileNo": "{{MobileNumber}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "RequestTime": "Mar 12, 2023 3:11:19 PM",
+  "RolePermissionId": "6,1,1209,1210",
+  "ByUserId": 10,
+  "UID": "21"
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

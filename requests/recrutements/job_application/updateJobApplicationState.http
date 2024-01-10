@@ -1,0 +1,36 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Update Job Application State Request
+# @name update_job_application_state
+POST {{host}}/recrutements_v1/UpdateJobApplicationStatus
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+    "JobApplicationId": 1,
+    "JobApplicationStatusId": 2
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

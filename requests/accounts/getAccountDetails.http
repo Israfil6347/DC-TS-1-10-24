@@ -1,0 +1,64 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Account Details Request
+# @name getAccountDetails
+POST {{host}}/accounts_V1/GetAccountDetails
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": 63786,
+  "EmployeeCode": "1180",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Portal",
+  "AccountNo": "DDS-0058818"
+}
+
+## Response
+# {
+#   "Data": {
+#     "AccountNo": "DDS-0058818",
+#     "DCAccountNo": "DDS-0058818",
+#     "AccHolderName": "BAPPY BESRA",
+#     "AccountTypeName": "Double Deposit Scheme Project",
+#     "Balance": 1000000,
+#     "WithdrawableBalance": 0,
+#     "LoanBalance": 0,
+#     "STATUS": "Active",
+#     "LastPaidDate": "2023-05-23T12:31:00",
+#     "AccountNominee": "SUJAN DOMINIC GOMES ",
+#     "PendingTotalDepositAmount": 4005,
+#     "PendingTotalDepositRequest": 37,
+#     "PendingTotalTransferAmount": 0,
+#     "PendingTotalTransferRequest": 0,
+#     "AccountId": 293908,
+#     "LedgerId": 1500,
+#     "MaturityDate": "2031-05-22T12:42:25.71",
+#     "AccountTypeCode": 30,
+#     "IsDefaulter": ""
+#   },
+#   "Status": "success",
+#   "Message": null
+# }

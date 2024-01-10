@@ -1,0 +1,57 @@
+### Login Request
+# @name userLogin
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "bappy.besra@cccul.com",
+  "Password": "9c4fa95832d2decc0fae638806590551"
+}
+
+## Response:
+# {
+#   "Data": {
+#     "AuthUserInfo": {
+#       "UserId": 10,
+#       "UserName": "NEWTON MITRA",
+#       "UserPicture": "Base64",
+#       "RoleIds": "6,1,1210,1209",
+#       "RoleNames": "MFS User,Super Administrator,HRM Admin Web",
+#       "RegisteredMobile": "{{MobileNumber}}",
+#       "RegisteredEmail": "{{UserName}}",
+#       "Address": "MIRPUR,KAFRUL,DHAKA",
+#       "OrganizationCode": "001",
+#       "BranchCode": "00 ,00 ,00 ",
+#       "PersonId": "{{PersonId}}",
+#       "EmployeeCode": "{{EmployeeCode}}",
+#       "DeviceId": 16554
+#     },
+#     "PassbookMenus": [
+#       {
+#         "MenuId": 446,
+#         "ParentMenuId": 0,
+#         "MenuName": "MFS App Menu",
+#         "Icon": "",
+#         "Sort": 19,
+#         "RolePermissionIds": "",
+#         "MfsIcon": "Base64"
+#       }
+#     ],
+#     "WebPortalMenus": [
+#       {
+#         "MenuId": 446,
+#         "ParentMenuId": 0,
+#         "MenuName": "MFS App Menu",
+#         "Icon": "",
+#         "Sort": 19,
+#         "RolePermissionIds": "",
+#         "MfsIcon": "Base64"
+#       }
+#     ]
+#   },
+#   "Status": "success",
+#   "Message": null
+# }
+

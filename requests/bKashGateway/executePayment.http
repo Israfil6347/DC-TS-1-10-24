@@ -1,0 +1,26 @@
+@Host=https://tokenized.sandbox.bka.sh/v1.2.0-beta
+POST {{Host}}/tokenized/checkout/create 
+Content-Type: application/json
+Accept: application/json
+authorization: eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlODNlMDkwMC1jY2ZmLTQzYTctODhiNy0wNjE5NDJkMTVmOTYiLCJhdWQiOiI2cDdhcWVzZmljZTAxazltNWdxZTJhMGlhaCIsImV2ZW50X2lkIjoiYTg4ZGMzY2QtNjQ4NC00MGFiLThmZDAtOGFiMGJiMzc5NGNiIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2OTM4OTI5MTksImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMiIsImV4cCI6MTY5Mzg5NjU4MiwiaWF0IjoxNjkzODkyOTgyfQ.AT4x814pXgcI8QiWaqvC6oS6q4K5Fx6mLnN8fQ54WZMXeiAH5hdjf7j4iRQfzDF6gdvIjnd0yfojF1WDHw9VtSlw96Z5NHBF3aJhyj1GO-115FoJYGC0C4dSciMd8OUDwIHCZjKQXqfxCe9rl8W8qzWP-NyAWI1KGXjHqLMWy6adjpAFrpv5NhpQPmuzWW4CDufAjeUVvmmqLkkH8K6EymmMpRLhuuce7VFmQWjAZQZer1XHiIdS9ciZexYsqK1frvWSSz30PzYccuGcRAcOkMDkDbELa3JwSOxXewZCU3A874FIdP7Pq2RZjBnwAqTzUUUlo_7eEwK8dMtr-iTxEw
+x-app-key: 4f6o0cjiki2rfm34kfdadl1eqq
+
+{
+	"paymentID" : "TR0011mLzr3u91693893213326"
+}
+
+## Response
+# { 
+#   "statusCode": "0000", 
+#   "statusMessage": "Successful", 
+#   "paymentID": "TR0011ON1565154754797", 
+#   "payerReference": "01770618575", 
+#   "customerMsisdn": "01770618575", 
+#   "trxID": "6H7801QFYM", 
+#   "amount": "15", 
+#   "transactionStatus": "Completed", 
+#   "paymentExecuteTime": "2019-08-07T11:15:56:336 GMT+0600", 
+#   "currency": "BDT", 
+#   "intent": "sale", 
+#   "merchantInvoiceNumber": "MER1231" 
+# }

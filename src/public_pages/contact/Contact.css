@@ -1,0 +1,17 @@
+.airport {
+  height: 69px;
+  width: 47px;
+  background-image: url('../../assets/images/contact/dc_logo.png');
+  background-size: contain;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+.airport2 {
+  height: 69px;
+  width: 47px;
+  background-image: url('../../assets/images/contact/dc_logo.png');
+  background-size: contain;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}

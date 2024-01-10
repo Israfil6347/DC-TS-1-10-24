@@ -1,0 +1,38 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Job Circulars Request
+# @name get_job_circulars
+POST {{host}}/recrutements_v1/GetJobCirculars
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+    "ActiveStatus": -1,
+    "startRec": 0,
+    "pageSize": 3,
+    "searchText": ""
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

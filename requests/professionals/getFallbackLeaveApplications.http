@@ -1,0 +1,68 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Fallback Leave Applications Request
+# @name getFallbackLeaveApplications
+POST {{host}}/professionals_v1/getFallbackLeaveApplications
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client"
+}
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "LeaveTypeCode": "01",
+#       "LeaveType": "Earn Leave",
+#       "LeaveApplicationId": 56,
+#       "EmployeeId": 141,
+#       "EmployeeName": "BAPPY BESRA",
+#       "DepartmentName": "Information and Communication Technology Department",
+#       "DesignationName": "Network Engineer",
+#       "ApplicationDate": "2023-08-24T14:52:30",
+#       "RejoiningDate": "2023-08-26T00:00:00",
+#       "TotalLeaveDays": 2,
+#       "Remarks": "jjjj",
+#       "SupervisorName": "ANIMATIUS PANNA PERIS",
+#       "FullName": "MD. ISRAFIL",
+#       "FallbackEmployeeCode": "1322",
+#       "FallbackPersonId": 83138,
+#       "FallbackPersonName": "MD. ISRAFIL",
+#       "CurrentStage": "Applied",
+#       "StageCode": "01",
+#       "FromDate": "2023-08-26T00:00:00",
+#       "ToDate": "2023-08-27T00:00:00",
+#       "PersonId": "{{PersonId}}",
+#       "EmployeeCode": "1185"
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

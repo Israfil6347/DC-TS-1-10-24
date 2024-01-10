@@ -1,0 +1,58 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Calculate Loan Payment Request
+# @name calculateLoanPayment
+POST {{host}}/loans_V1/calculateLoanPayment
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "Days": 1,
+  "InterestRate": 15,
+  "IssuedAmount": 25000,
+  "IssuedDate": "2023/08/23",
+  "LastPaidDate": "2023/08/23",
+  "LoanBalance": 25000,
+  "LoanRefund": 4170,
+  "ModuleCode": "61"
+}
+
+# Response
+# {
+#   "Data": {
+#     "LoanRefundAmount": 4170,
+#     "InterestAmount": 10,
+#     "LoanFine": 0,
+#     "LoanLpsAmount": 0,
+#     "LoanLpsRenewFeeAmount": 0,
+#     "ShareFine": 0
+#   },
+#   "Status": "success",
+#   "Message": null
+# }

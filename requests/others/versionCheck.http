@@ -1,0 +1,18 @@
+### Version Check Request
+# @name version-check
+POST {{host}}/others_v1/versionCheck
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+    "Data": "39"
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

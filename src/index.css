@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap,family=Amita:wght@400;700&family=Andada+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Anton&family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Baloo+Da+2:wght@400;500;600;700;800&family=Cookie&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Galada&family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&family=Hurricane&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mrs+Saint+Delafield&family=Ms+Madi&family=Noto+Serif+Bengali:wght@100;200;300;400;500;600;700;800;900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&family=Sacramento&family=Sora:wght@100;200;300;400;500;600;700;800&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stalemate&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap');
+@tailwind base;
+@import '~react-image-gallery/styles/css/image-gallery.css';
+
+* {
+  scroll-behavior: smooth;
+  scrollbar-color: #242269 #c2d2e4;
+  scrollbar-width: 6px;
+}
+
+/* / Chrome, Edge, and Safari / */
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 1px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--theme-primary);
+  border-radius: 1px;
+  border: 1px solid var(--theme-primary);
+}
+
+* {
+  scroll-behavior: smooth;
+  scrollbar-color: #0a4c95 #c2d2e4;
+  scrollbar-width: 6px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --theme-background: #ebf1f3;
+    --theme-backgroundVariant: #fdfeff;
+    --theme-on-background: #474747;
+    --theme-on-backgroundVariant: #303030;
+    --theme-primary: #242269;
+    --theme-primaryVariant: #0a2947;
+    --theme-on-primary: #e2e2e2;
+    --theme-on-primaryVariant: #e9e9e9;
+    --theme-secondary: #fdfeff;
+    --theme-on-secondary: #474747;
+    --theme-secondary-variant: #303030;
+    --theme-surface: #ffffff;
+    --theme-on-surface: #474747;
+    --theme-on-surfaceVariant: #303030;
+    --theme-error: #be2c00;
+    --theme-on-error: #ffffff;
+    --theme-success: #02692a;
+    --theme-on-success: #ffffff;
+    --theme-on-border: #8a8a8a;
+    --theme-on-disabled: #f3f3f3;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.theme-dark {
+  --theme-background: #37474f;
+  --theme-backgroundVariant: #263238;
+  --theme-on-background: #f7f8f7;
+  --theme-on-backgroundVariant: #dcdcdd;
+  --theme-primary: #051b30;
+  --theme-primaryVariant: #031629;
+  --theme-on-primary: #ffffff;
+  --theme-on-primaryVariant: #dbd8f0;
+  --theme-secondary: #0ff768;
+  --theme-on-secondary: #37474f;
+  --theme-secondary-variant: #000;
+  --theme-surface: #455a64;
+  --theme-on-surface: #ffff;
+  --theme-on-surfaceVariant: rgb(217, 240, 226);
+  --theme-error: #be2c00;
+  --theme-on-error: #ffffff;
+  --theme-success: #02692a;
+  --theme-on-success: #ffffff;
+  --theme-on-border: #8a8a8a;
+  --theme-on-disabled: #f3f3f3;
+}
+
+.text-sideways {
+  writing-mode: tb-rl;
+}
+.active > svg {
+  display: block;
+}
+.fc-event-main {
+  background: #242269;
+}
+
+@media print {
+  #printbtn {
+    display: none;
+  }
+}

@@ -1,0 +1,54 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Submit Fund Transfer Request
+# @name submitFundTransfer
+POST {{host}}/transfers_v2/submitFundTransfer
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "AccHolder": "T-0063599",
+  "AccountNo": "T-0063599",
+  "AccTransfer": "T-0031731",
+  "AccType": "16",
+  "Amount": 500,
+  "CardNo": "0010102700635993",
+  "NameOnCard": "BAPPY BESRA",
+  "SecretKey": "1458e7509aa5f47ecfb92536e7dd1dc7",
+  "TransferToAcc": "T-0031731",
+  "OTPRegId": "32509",
+  "OTPValue": "619177"
+}
+
+## Response
+# {
+#     "Data": "Your transaction completed successfully with voucher no JVDC202308240002 and remaining balance 274909.00",
+#     "Status": "success",
+#     "Message": null
+# }

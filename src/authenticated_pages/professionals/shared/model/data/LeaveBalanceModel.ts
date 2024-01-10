@@ -1,0 +1,25 @@
+export class LeaveBalanceModel {
+  LeaveTypeCode: string = '';
+  LeaveType: string = '';
+  TotalLeaveDays: number = 0;
+  Balance: number = 0;
+  TotalLeaveApplied: number = 0;
+  MaxBalance: number = 0;
+  DeductUponHourLeave: number = 0;
+  MinimumNoticeDay: number = 0;
+  MaxLeaveAtATime: number = 0;
+  MonthlyEarn: number = 0;
+  DeductUponLate: number = 0;
+  DeductUponMinimumPresence: number = 0;
+  DocumentsRequiredDays: number = 0;
+  MaximumHourLeave: number = 0;
+  MaximumFallbackDays: number = 0;
+  ApplyBeforeDays: number = 0;
+  EnableFutureDateApplication: boolean = false;
+  EnablePastDateApplication: boolean = false;
+  IsFallbackRequired: boolean = false;
+  IsYearlyForward: boolean = false;
+  WithTime: boolean = false;
+  IsRejoinDateRequired: boolean = false;
+  LastApplicationDate: string = '';
+}

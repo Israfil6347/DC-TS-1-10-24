@@ -1,0 +1,56 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Update Job Circular Request
+# @name update_job_circular
+POST {{host}}/recrutements_v1/UpdateJobCircular
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+    "jobCircularId": 2,
+    "jobPosition": "React Developer",
+    "organizationName": "The Christian Co-operative Credit Union Ltd.",
+    "totalNumberOfVacancy": "Undefined",
+    "jobContext": "Undefined",
+    "jobResponsibility": "<h1>est dolores cupiditate</h1><p>Officiis nostrum unde nemo cum maiores. Ex sed magni et. Dolorem et ut qui facere eius.</p><p>Eum aut voluptate quasi iste modi consectetur. Similique accusamus minus non architecto odio nesciunt rem dolorem. Quis iure consequuntur aspernatur sapiente ipsam qui. Hic esse amet et maxime non error.</p><p>Laborum laudantium optio ipsam ipsa qui aut velit. Cupiditate quod tempora molestiae qui est. Rerum pariatur sit consequatur a et cumque. Et enim ullam iusto quia praesentium molestiae sit.</p><p>Eum qui repellat animi hic ad. Et quae dolorum quam omnis. Qui saepe quasi provident pariatur quis omnis. Sapiente quaerat odio necessitatibus dolorem maxime ipsum. Molestiae doloremque nostrum sit sed officiis.</p>",
+    "employmentStatus": "Full Time",
+    "educationalRequirements": "BSC/MSC IN CSE",
+    "experienceRequirements": "At least 1 Years of Software Development",
+    "additionalRequirements": "<h1>est dolores cupiditate</h1><p>Officiis nostrum unde nemo cum maiores. Ex sed magni et. Dolorem et ut qui facere eius.</p><p>Eum aut voluptate quasi iste modi consectetur. Similique accusamus minus non architecto odio nesciunt rem dolorem. Quis iure consequuntur aspernatur sapiente ipsam qui. Hic esse amet et maxime non error.</p><p>Laborum laudantium optio ipsam ipsa qui aut velit. Cupiditate quod tempora molestiae qui est. Rerum pariatur sit consequatur a et cumque. Et enim ullam iusto quia praesentium molestiae sit.</p><p>Eum qui repellat animi hic ad. Et quae dolorum quam omnis. Qui saepe quasi provident pariatur quis omnis. Sapiente quaerat odio necessitatibus dolorem maxime ipsum. Molestiae doloremque nostrum sit sed officiis.</p>",
+    "religion": "Islam",
+    "age": "Below 35",
+    "gender": "Male and Female",
+    "jobLocation": "20000",
+    "salary": "20000",
+    "compensationAndOtherBenefits": "<h1>est dolores cupiditate</h1><p>Officiis nostrum unde nemo cum maiores. Ex sed magni et. Dolorem et ut qui facere eius.</p><p>Eum aut voluptate quasi iste modi consectetur. Similique accusamus minus non architecto odio nesciunt rem dolorem. Quis iure consequuntur aspernatur sapiente ipsam qui. Hic esse amet et maxime non error.</p><p>Laborum laudantium optio ipsam ipsa qui aut velit. Cupiditate quod tempora molestiae qui est. Rerum pariatur sit consequatur a et cumque. Et enim ullam iusto quia praesentium molestiae sit.</p><p>Eum qui repellat animi hic ad. Et quae dolorum quam omnis. Qui saepe quasi provident pariatur quis omnis. Sapiente quaerat odio necessitatibus dolorem maxime ipsum. Molestiae doloremque nostrum sit sed officiis.</p>",
+    "applicationDeadline": "2022-10-01",
+    "publishedDate": "2022-09-01",
+    "contactInfo": "info@cccul.com",
+    "jobCircularStatus": true,
+    "remarks":"remarks",
+    "updatedBy": 1
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

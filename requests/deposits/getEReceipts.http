@@ -1,0 +1,57 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get eReceipts Request
+# @name getEReceipts
+POST {{host}}/deposits_V1/getEReceipts
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "fromDate": "2023-08-01",
+  "toDate": "2023-08-24"
+}
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "TxnDate": "2023-08-08T10:35:44",
+#       "DepositAmount": 0,
+#       "IsCashReceived": 1,
+#       "TellerTypeCode": "00",
+#       "BranchName": "Head Office",
+#       "VoucherId": 6760815,
+#       "Narration": "Cash Collection",
+#       "TotalAmount": 1111,
+#       "PersonId": 64025
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

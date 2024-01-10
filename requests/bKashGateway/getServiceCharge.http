@@ -1,0 +1,35 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+POST {{host}}/Deposit_Bkash_V1/GetbKashPaymentServiceCharge
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+{
+  "UserName": "newton.mitro@cccul.com",
+  "UID": "21",
+  "ByUserId": 21,
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "63786",
+  "EmployeeCode": "1180",
+  "MobileNumber": "+880-1704687376",
+  "MobileNo": "+880-1704687376",
+  "Client": "Web Client",
+  "TotalAmount": 10
+}

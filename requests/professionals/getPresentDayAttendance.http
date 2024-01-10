@@ -1,0 +1,51 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Present Day Attendance Request
+# @name getPresentDayAttendance
+POST {{host}}/professionals_V1/GetPresentDayAttendance
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "Application": "PassBook",
+  "ByUserId": 21,
+  "EmployeeCode": "1180",
+  "MobileNo": "+880-1704687376",
+  "MobileNumber": "+880-1704687376",
+  "PersonId": 63786,
+  "UID": "21",
+  "RolePermissionId": "6,1,337,346",
+  "RequestTime": "Sep 9, 2023 4:14:11 PM",
+  "UserName": "newton.mitro@cccul.com"
+}
+
+# {
+#   "Application": "PassBook",
+#   "ByUserId": 5,
+#   "DeviceRegId": "24681",
+#   "EmployeeCode": "1098",
+#   "MobileNo": "+880-1960684022",
+#   "MobileNumber": "+880-1960684022",
+#   "PersonId": 37425,
+#   "RequestTime": "Sep 9, 2023 4:14:11 PM",
+#   "RolePermissionId": "1,6,336,346,284",
+#   "UID": "5",
+#   "UserName": "raven.quiah@cccul.com"
+# }

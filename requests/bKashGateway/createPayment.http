@@ -1,0 +1,35 @@
+@Host=https://tokenized.sandbox.bka.sh/v1.2.0-beta
+POST {{Host}}/tokenized/checkout/create
+Content-Type: application/json
+Accept: application/json
+authorization: eyJraWQiOiJvTVJzNU9ZY0wrUnRXQ2o3ZEJtdlc5VDBEcytrckw5M1NzY0VqUzlERXVzPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlODNlMDkwMC1jY2ZmLTQzYTctODhiNy0wNjE5NDJkMTVmOTYiLCJhdWQiOiI2cDdhcWVzZmljZTAxazltNWdxZTJhMGlhaCIsImV2ZW50X2lkIjoiYmVkNjA2MjktMWFjMC00MDE2LWI2ZGQtNTVhZjhkZWYxZmM4IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2OTM5MDEyMzYsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5hcC1zb3V0aGVhc3QtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aGVhc3QtMV9yYTNuUFkzSlMiLCJjb2duaXRvOnVzZXJuYW1lIjoic2FuZGJveFRva2VuaXplZFVzZXIwMiIsImV4cCI6MTY5MzkwNDgzNiwiaWF0IjoxNjkzOTAxMjM2fQ.XjUOODHkvHvU2F2J6J6n5ut3aornW6KmQY3pLXK8tItcWj7BTgr5AIPtdYrHpdvbafhXIt03BYVXs50lMlqgrmBw5uPjifEAaY3JONsUuU9ivm_ZiLiZwJu9q30sXFbaKpM0O4TYa0ZqmYNyEjJE32uRU1UwfAeVq1GtC03j4kkIVX47DW1cDzjbOuQ82IGCq8NOcopsljhL6wSgE0WKcau7mFrweerbBVSx2JwOmFQTMO96DELc07x9IN9vqlJ1AZzahpHzdcqOUxk0BRUMGD3HQA2yrG6iVOzecmpethngCwgX24O1byDeSdP6I2_XiOfBZDnh2wL65k16l0o14Q
+x-app-key: 4f6o0cjiki2rfm34kfdadl1eqq
+
+{  
+   "mode": "0011",
+   "payerReference": "01723888888",
+   "callbackURL": "https://www.cccul.com",
+   "merchantAssociationInfo": "MI05MID54RF09123456One",
+   "amount": "500",
+   "currency": "BDT",
+   "intent": "sale",
+   "merchantInvoiceNumber": "Inv0124"
+}
+
+## Response 
+# { 
+#   "statusCode": "0000", 
+#   "statusMessage": "Successful", 
+#   "paymentID": "TR0011ON1565154754797", 
+#   "bkashURL": "https://bkash.com/redirect/tokenized/?paymentID=TR0011O N1565154754797*********", 
+#   "callbackURL": "yourURL.com", 
+#   "successCallbackURL": "yourURL.com?paymentID=TR0011ON1565154754797&status=success", 
+#   "failureCallbackURL": "yourURL.com?paymentID=TR0011ON1565154754797&status=failure", 
+#   "cancelledCallbackURL": "yourURL.com?paymentID=TR0011ON1565154754797&status=cancel", 
+#   "amount": "500", 
+#   "intent": "sale", 
+#   "currency": "BDT", 
+#   "paymentCreateTime": "2019-08-07T11:12:34:978 GMT+0600", 
+#   "transactionStatus": "Initiated", 
+#   "merchantInvoiceNumber": "Inv0124" 
+# }

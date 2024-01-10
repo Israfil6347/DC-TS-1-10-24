@@ -1,0 +1,58 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Submit Job Circular Request
+# @name submit_job_circular
+POST {{host}}/recrutements_v1/AddJobCircular
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+    "jobCircularId": 0,
+    "jobPosition": "ICT Trainee",
+    "organizationName": "The Christian Co-operative Credit Union Ltd.",
+    "totalNumberOfVacancy": "5",
+    "jobContext": "We are a leading IT company for the USA market located in Dhaka. We are now inviting talent and experience candidates to fill the following position.",
+    "jobResponsibility": "Input data in accurate manner into web-based software. Generate reports from software. Submit daily work summary reports to in-charge. Problem diagnosis and solve the problem.",
+    "employmentStatus": "Full Time",
+    "educationalRequirements": "BSC/MSC IN CSE",
+    "experienceRequirements": "Freshers are also encouraged to apply.",
+    "additionalRequirements": "-Age 22 to 28 years - Only males are allowed to apply - Able to work at Night shift in Office as always. - Must have knowledge to handle software. - Good typing speed in English with standard level accuracy minimum 35-40 WPM. - Able to communicate through email. - Able to speak English with overseas office staff as well as clients. - Good knowledge on MS word, Excel.",
+    "religion": "6",
+    "age": "Below 30",
+    "gender": "M",
+    "jobLocation": "Farmgate, Dhaka",
+    "salary": "15000",
+    "compensationAndOtherBenefits": "Provident fund, Weekly 2 holidays, Insurance, Gratuity Salary Review: Yearly Festival Bonus: 2",
+    "applicationDeadline": "2023-03-05",
+    "publishedDate": "2023-01-01",
+    "contactInfo": "info@cccul.com",
+    "jobCircularStatus": true,
+    "createdBy": 1,
+    "updatedBy": 1,
+    "createdAt": "2022-09-01",
+    "updatedAt": "2022-09-01"
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

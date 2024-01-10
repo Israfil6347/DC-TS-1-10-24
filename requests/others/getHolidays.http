@@ -1,0 +1,22 @@
+### Get Holidays Request
+# @name getHolidays
+POST {{host}}/others_v1/GetHolidaysList
+Content-Type: application/json
+Accept: application/json
+
+{
+  "ApplicationName": "MFS",
+  "ContentName": "RealTime Deposit Notes",
+  "Application": "PassBook",
+  "ByUserId": 5,
+  "DeviceRegId": "24676",
+  "EmployeeCode": "1098",
+  "IMEI": "7dd6bdd41fd88f83 - 41ee0576-3c48-4170-a1ee-e90f3b93845f",
+  "MobileNo": "+880-1960684022",
+  "MobileNumber": "+880-1960684022",
+  "PersonId": 37425,
+  "RequestTime": "Sep 3, 2023 5:19:43 PM",
+  "RolePermissionId": "1,6,336,346,284",
+  "UID": "5",
+  "UserName": "raven.quiah@cccul.com"
+}

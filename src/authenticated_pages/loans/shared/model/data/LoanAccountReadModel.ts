@@ -1,0 +1,19 @@
+export class LoanAccountReadModel {
+  LoanNumber: string = '';
+  LoaneeName: string = '';
+  LoanType: string = '';
+  IssuedDate: string = '';
+  IssuedAmount: number = 0;
+  InterestRate: number = 0;
+  LastPaidDate: string = '';
+  Days: number = 0;
+  IsLastPaidDate: number = 0;
+  ModuleCode: string = '';
+  LoanBalance: number = 0;
+  Installment: string = '';
+  LoanRefundAmount: number = 0;
+  LoanStatus: string = '';
+  LoanEndDate: string = '';
+  LoanProductCode: string = '';
+  DefaultDetails: string = '';
+}

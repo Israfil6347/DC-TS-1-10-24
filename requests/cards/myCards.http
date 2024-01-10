@@ -1,0 +1,73 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### My Cards Request
+# @name myCards
+POST {{host}}/cards_V2/myCards
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "RolePermissionId": "6,1,1209,1210",
+  "ByUserId": "{{ByUserId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "PersonId": "{{PersonId}}",
+  "Client" : "Web Client",
+  "MobileNo" : "{{MobileNumber}}",
+  "UID" : "{{ByUserId}}"
+}
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "CardsAccounts": [
+#         {
+#           "AccountNumber": "T-0068916",
+#           "AccountTypeName": "Savings Account",
+#           "AccountTypeCode": "16",
+#           "DCAccountNo": "T-0068916",
+#           "Balance": 4365,
+#           "UserId": 0,
+#           "RolePermissionId": null,
+#           "WithdrawableBalance": 4165,
+#           "AccountId": 293939,
+#           "LedgerId": 1493
+#         }
+#       ],
+#       "IsPrint": false,
+#       "Amount": 0,
+#       "IsLocked": false,
+#       "IsActive": true,
+#       "Name": "Sunit Corneleous Sarker",
+#       "CardNo": "0010101700689166",
+#       "CardType": " Virtual Debit Card",
+#       "ExpiryDate": "21/08/2026",
+#       "IsVirtual": true,
+#       "IsBlock": false,
+#       "IsUsable": true,
+#       "CardStageCode": "07",
+#       "CardStageName": "Virtual Card"
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

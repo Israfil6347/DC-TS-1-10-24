@@ -1,0 +1,47 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Verify Card PIN Request
+# @name verifyCardPIN
+POST {{host}}/cards_V1/verifyCardPIN
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "CardNo": "{{CardNo}}",
+  "AccountNo": "{{CardAccountNumber}}",
+  "NameOnCard": "{{NameOnCard}}",
+  "SecretKey": "encrypted_pin",
+  "MobileNumber": "{{MobileNumber}}",
+  "RolePermissionId": "6,1,1210,1209",
+  "ByUserId": 10,
+  "EmployeeCode": "{{EmployeeCode}}",
+  "PersonId": 12345
+}
+
+## Response
+# {
+#   "Data": {
+#     "OTPRegId": "32513"
+#   },
+#   "Status": "success",
+#   "Message": null
+# }
+

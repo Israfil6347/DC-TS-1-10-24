@@ -1,0 +1,61 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Eligible Collateral Accounts Request
+# @name getEligibleCollateralAccounts
+POST {{host}}/loans_v1/getEligibleCollateralAccounts
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "ProductCode": "44 "
+}
+
+## Response
+{
+  "Data": {
+    "CollateralAccounts": [
+      {
+        "AccountId": 173915,
+        "AccountType": "Pension Benefit Scheme",
+        "AccountNumber": "PBS-0000254",
+        "TotalBalance": 101500,
+        "LoanableBalance": 91350,
+        "PartialApplyLoan": 91350,
+        "IsEligible": true,
+        "WithdrawableBalance": 101500
+      }
+    ],
+    "MaximumLoanAmount": 100000,
+    "InterestRate": 0,
+    "NumberOfInstallment": 36,
+    "TotalApplyLoan": 0
+  },
+  "Status": "success",
+  "Message": null
+}

@@ -1,0 +1,73 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Submit Deposit Later Request
+# @name submitDepositLater
+POST {{host}}/deposits_V2/submitDepositLater
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "TransactionNumber": "0",
+  "TransactionType": "DepositRequest",
+  "AccountHolderName": "BAPPY BESRA",
+  "AccountNo": "T-0063599",
+  "AccountId": 59136,
+  "AccountType": "Savings Account",
+  "DepositDate": "2023-08-26T00:00:00+06:00",
+  "FromAccountNo": "T-0063599",
+  "LedgerId": 1493,
+  "Remarks": "",
+  "RepeatMonths": 2,
+  "ScheduleDate": "2023-08-24T11:35:25+06:00",
+  "TotalDepositAmount": 10,
+  "TransactionMethod": "11",
+  "TransactionModels": [
+    {
+      "AccountNo": "0050726       ",
+      "AccountType": "Share Account",
+      "LedgerId": 1486,
+      "Amount": 10,
+      "Balance": 0,
+      "AccountId": 226060,
+      "AccountTypeCode": "10",
+      "PlType": 1
+    }
+  ],
+  "CardNo": "0010102700635993",
+  "SecretKey": "1458e7509aa5f47ecfb92536e7dd1dc7",
+  "OTPRegId": "32518",
+  "OTPValue": "682564"
+}
+
+## Response
+# {
+#     "Data": "Your request has been submitted successfully.",
+#     "Status": "success",
+#     "Message": null
+# }

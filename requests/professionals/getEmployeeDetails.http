@@ -1,0 +1,117 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Employee Details Request
+# @name getEmployeeDetails
+POST {{host}}/professionals_v1/getEmployeeDetails
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client"
+}
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "PermanentAddressLine2": "KUSUMBA",
+#       "FullName": "BAPPY BESRA",
+#       "DateOfBirth": "1993-10-15T00:00:00",
+#       "RegisteredMobile": "{{MobileNumber}}",
+#       "PermanentAddressLine1": "BELPUKUR",
+#       "PermanentAddressLine4": "JAYPURHAT ",
+#       "PermanentAddressLine5": "",
+#       "PresentAddressLine1": "GP,GHA-193/2,TB GATE",
+#       "PresentAddressLine2": "MOHAKHALI",
+#       "PresentAddressLine3": "MOHAKHALI ",
+#       "PresentAddressLine4": "DHAKA",
+#       "PresentAddressLine5": "",
+#       "Email": "bappy.ece@gmail.com",
+#       "FathersName": "MR.RUBEN BESRA",
+#       "MothersName": "MRS. GITA RANI",
+#       "SpouseName": "",
+#       "BloodGroup": "O (+)",
+#       "Gender": "Male",
+#       "MaritalStatus": "Single",
+#       "Religion": "Christianity",
+#       "Nationality": "Bangladeshi",
+#       "NID": "5551928160",
+#       "RfidCardNo": "10777769",
+#       "Occupation": "SERVICE",
+#       "PersonPhoto": "base64 image",
+#       "JobLocation": " THE CCCUL, 173/1/A, EAST TEJKUNIPARA, TEJGAON",
+#       "BirthDistrictName": "JOYPURHAT",
+#       "OtherMobileNumber": "01774649844",
+#       "OrganizationName": "The Christian Co-operative Credit Union Ltd., Dhaka.",
+#       "DutyTypeCode": "01",
+#       "PostingDate": "1899-12-29T00:00:00",
+#       "PermanentAddress": " BELPUKUR, PACHBIBI, JAYPURHAT",
+#       "PresentAddress": " GP,GHA-193/2,TB GATE, MOHAKHALI, DHAKA",
+#       "Nominees": [],
+#       "PersonAttachments": [],
+#       "PersonEducationTrainingDetails": [],
+#       "PersonWorkDetails": [],
+#       "PersonFamilyDetails": [
+#         {
+#           "RelationMapId": 24612,
+#           "RelationTypeId": 0,
+#           "RelationName": "Uncle",
+#           "ParentPersonId": 64025,
+#           "ParentPersonName": "BAPPY BESRA",
+#           "ChildPersonName": "ALBERT D COSTA"
+#         }
+#       ],
+#       "EmployeeId": 141,
+#       "EmployeeMobile": "0",
+#       "EmployeeEmail": "bappy.besra@cccul.com",
+#       "EmployeeSupervisorCode": "1312",
+#       "SupervisorName": "ANIMATIUS PANNA PERIS",
+#       "EmployeeType": "",
+#       "EmployeeCategory": "01",
+#       "EmployeeCategoryName": "Regular",
+#       "DepartmentCode": "07   ",
+#       "DepartmentName": "Information and Communication Technology Department",
+#       "DesignationCode": "009  ",
+#       "DesignationName": "Network Engineer",
+#       "BranchCode": "01",
+#       "BranchName": "Head Office",
+#       "JoiningDate": "1899-12-29T00:00:00",
+#       "ResignDate": "0001-01-01T00:00:00",
+#       "RetiredDate": "0001-01-01T00:00:00",
+#       "TerminationDate": "0001-01-01T00:00:00",
+#       "ConfirmationDate": "1899-12-29T00:00:00",
+#       "EmployeeStatusCode": "01",
+#       "EmployeeStatus": "Active",
+#       "MobileNumber": "01815458842",
+#       "PersonId": "{{PersonId}}",
+#       "EmployeeCode": "1185"
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

@@ -1,0 +1,86 @@
+{
+  "name": "new.cccul.com",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fullcalendar/react": "^6.1.8",
+    "@mui/lab": "^5.0.0-alpha.132",
+    "@mui/material": "^5.13.4",
+    "@mui/x-date-pickers": "^6.6.0",
+    "@react-google-maps/api": "^2.18.1",
+    "@react-pdf-viewer/core": "^3.11.0",
+    "@react-pdf/renderer": "^3.1.9",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.8",
+    "@types/crypto-js": "^4.1.1",
+    "@types/fullcalendar": "^3.8.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.4",
+    "@types/react": "^18.0.37",
+    "@types/react-csv": "^1.1.3",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-image-gallery": "^1.2.0",
+    "@types/react-otp-input": "^2.0.1",
+    "axios": "^1.3.2",
+    "body-parser": "^1.20.2",
+    "chart.js": "^4.4.0",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.9",
+    "framer-motion": "^7.6.19",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-bkash": "^3.0.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-csv": "^2.2.2",
+    "react-dom": "^18.2.0",
+    "react-idle-timer": "^5.7.2",
+    "react-image-gallery": "^1.2.11",
+    "react-moment": "^1.1.3",
+    "react-otp-input": "^3.0.4",
+    "react-password-strength-bar": "^0.4.1",
+    "react-player": "^2.13.0",
+    "react-qr-code": "^2.0.11",
+    "react-quill": "^2.0.0",
+    "react-scripts": "5.0.1",
+    "react-to-print": "^2.14.13",
+    "react-toastify": "^9.1.3",
+    "react-uuid": "^2.0.0",
+    "react-youtube": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "react-router-dom": "^6.10.0",
+    "tailwindcss": "^3.2.4"
+  }
+}

@@ -1,0 +1,95 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Leave Type Balances Request
+# @name getLeaveTypeBalances
+POST {{host}}/professionals_v1/getLeaveTypeBalances
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "LeaveTypeCode": "01"
+}
+
+## Response
+# {
+#   "Data": {
+#     "LeaveInfo": {
+#       "LeaveTypeCode": "01",
+#       "LeaveType": "Earn Leave",
+#       "EmployeeId": 0,
+#       "TotalLeaveDays": 20,
+#       "Balance": 25.3,
+#       "TotalLeaveApplied": 1,
+#       "LastApplicationDate": "2023-05-14T18:26:59",
+#       "MaxBalance": 0,
+#       "MinimumNoticeDay": 0,
+#       "MaxLeaveAtATime": 10,
+#       "DocumentsRequiredDays": 0,
+#       "MaximumHourLeave": 0,
+#       "ApplyBeforeDays": 0,
+#       "IsFallbackRequired": true,
+#       "MaximumFallbackDays": 999,
+#       "IsEditable": false,
+#       "IsRejoinDateRequired": true,
+#       "EnableFutureDateApplication": true,
+#       "EnablePastDateApplication": false,
+#       "WithTime": false,
+#       "EnablePresentDateApplication": false,
+#       "RequireToDate": true
+#     },
+#     "LeaveSummary": [
+#       {
+#         "LeaveTypeCode": "01",
+#         "LeaveType": "Earn Leave",
+#         "EmployeeId": 0,
+#         "TotalLeaveDays": 20,
+#         "Balance": 25.3,
+#         "TotalLeaveApplied": 1,
+#         "LastApplicationDate": "2023-05-14T18:26:59",
+#         "MaxBalance": 0,
+#         "MinimumNoticeDay": 0,
+#         "MaxLeaveAtATime": 10,
+#         "DocumentsRequiredDays": 0,
+#         "MaximumHourLeave": 0,
+#         "ApplyBeforeDays": 0,
+#         "IsFallbackRequired": true,
+#         "MaximumFallbackDays": 999,
+#         "IsEditable": false,
+#         "IsRejoinDateRequired": true,
+#         "EnableFutureDateApplication": true,
+#         "EnablePastDateApplication": false,
+#         "WithTime": false,
+#         "EnablePresentDateApplication": false,
+#         "RequireToDate": true
+#       }
+#     ]
+#   },
+#   "Status": "success",
+#   "Message": null
+# }

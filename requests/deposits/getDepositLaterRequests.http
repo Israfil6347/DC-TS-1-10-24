@@ -1,0 +1,164 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Deposit Later Requests
+# @name getDepositLaterRequests
+POST {{host}}/deposits_V1/getDepositLaterRequests
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "TransactionType": "DepositRequest"
+}
+
+## Response
+# {
+#     "Data": [
+#   {
+#     "NameOnCard": null,
+#     "TellerName": null,
+#     "AccType": null,
+#     "AccNo": null,
+#     "TerminalID": null,
+#     "Token": null,
+#     "CardNo": null,
+#     "RequestSentTime": null,
+#     "SecretKey": null,
+#     "IP": null,
+#     "TransferToAcc": null,
+#     "Amount": 0,
+#     "TransferType": 0,
+#     "ToAccountNo": null,
+#     "ByUserId": 0,
+#     "MobileNumber": null,
+#     "UserName": null,
+#     "TransactionBy": null,
+#     "RolePermissionId": null,
+#     "startRec": 0,
+#     "pageSize": 0,
+#     "searchText": "",
+#     "TotalUsers": 0,
+#     "RequestDate": "2023-08-17T15:18:24",
+#     "TransactionDate": null,
+#     "Id": 12026,
+#     "Ids": null,
+#     "DepositDate": "2023-09-24T00:00:00",
+#     "FromDate": "0001-01-01T00:00:00",
+#     "ToDate": "0001-01-01T00:00:00",
+#     "FromAccountNo": null,
+#     "MembershipNo": "T-0063599       ",
+#     "BaseNo": null,
+#     "AccountHolderName": null,
+#     "AccHolder": "BAPPY BESRA                                                           ",
+#     "ReceiverName": null,
+#     "Particulars": null,
+#     "TransactionNumber": null,
+#     "TransactionMethod": "Savings Account",
+#     "TransactionMethodCode": null,
+#     "TransactionType": "DepositRequest",
+#     "TransactionReceipt": null,
+#     "SendAmount": 0,
+#     "Months": 0,
+#     "ScheduleDate": null,
+#     "Remarks": null,
+#     "TransferRequestId": 0,
+#     "Status": "Pending",
+#     "PostingStatus": null,
+#     "Total": 0,
+#     "Details": [
+#       {
+#         "NameOnCard": null,
+#         "TellerName": null,
+#         "AccType": null,
+#         "AccNo": null,
+#         "TerminalID": null,
+#         "Token": null,
+#         "CardNo": null,
+#         "RequestSentTime": null,
+#         "SecretKey": null,
+#         "IP": null,
+#         "TransferToAcc": "0050628       ",
+#         "Amount": 10,
+#         "TransferType": 0,
+#         "ToAccountNo": null,
+#         "ByUserId": 0,
+#         "MobileNumber": null,
+#         "UserName": null,
+#         "TransactionBy": null,
+#         "RolePermissionId": null,
+#         "startRec": 0,
+#         "pageSize": 0,
+#         "searchText": "",
+#         "TotalUsers": 0,
+#         "RequestDate": null,
+#         "TransactionDate": null,
+#         "Id": 0,
+#         "Ids": null,
+#         "DepositDate": "0001-01-01T00:00:00",
+#         "FromDate": "0001-01-01T00:00:00",
+#         "ToDate": "0001-01-01T00:00:00",
+#         "FromAccountNo": null,
+#         "MembershipNo": null,
+#         "BaseNo": null,
+#         "AccountHolderName": null,
+#         "AccHolder": "BAPPY BESRA",
+#         "ReceiverName": null,
+#         "Particulars": "Share Account",
+#         "TransactionNumber": null,
+#         "TransactionMethod": null,
+#         "TransactionMethodCode": null,
+#         "TransactionType": null,
+#         "TransactionReceipt": null,
+#         "SendAmount": 0,
+#         "Months": 0,
+#         "ScheduleDate": null,
+#         "Remarks": null,
+#         "TransferRequestId": 12026,
+#         "Status": null,
+#         "PostingStatus": null,
+#         "Total": 0,
+#         "Details": null,
+#         "AccountDetails": null,
+#         "IsLoan": 0,
+#         "Code": null,
+#         "TransactionNo": null,
+#         "DCAccountNo": null,
+#         "PersonId": 0
+#       },
+#     ],
+#     "AccountDetails": null,
+#     "IsLoan": 0,
+#     "Code": null,
+#     "TransactionNo": null,
+#     "DCAccountNo": null,
+#     "PersonId": 0
+#   },
+# ],
+#     "Status": "success",
+#     "Message": null
+# }

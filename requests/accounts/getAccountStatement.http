@@ -1,0 +1,59 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Account Statement Request
+# @name getAccountStatement
+POST {{host}}/accounts_V2/getAccountStatement
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "AccountNo": "HCS-0064072",
+  "StartDate": "2023/7/1",
+  "EndDate": "23-Aug-2023"
+}
+
+## Response
+# {
+#   "Data": [
+#     {
+#       "TxnDate": "2023-07-01T00:00:00",
+#       "Particulars": "B/F               ",
+#       "DepositAmount": 0,
+#       "WithdrawAmount": 0,
+#       "Balance": 1300,
+#       "AccountNo": "HCS-0064072",
+#       "AccountName": "BAPPY BESRA",
+#       "AccountType": null,
+#       "StartDate": null,
+#       "EndDate": null
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }

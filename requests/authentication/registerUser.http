@@ -1,0 +1,21 @@
+### User Registration Request
+# @name registerUser
+POST {{host}}/Auth_V1/UserRegister
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "my_{{UserName}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "Password": "4a7d1ed414474e4033ac29ccb8653d9b",
+  "WithMFSRegistration": true
+}
+
+## Response
+# {
+#     "Data": "find_out",
+#     "Status": "success",
+#     "Message": null
+# }

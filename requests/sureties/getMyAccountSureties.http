@@ -1,0 +1,65 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get My Account Sureties Request
+# @name getMyAccountSureties
+POST {{host}}/sureties_v1/getLoanSuretyGiven
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,238,4,336,346",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "StartDate": "2023/7/1",
+  "EndDate": "2023-08-24T11:15:16+06:00"
+}
+
+## Response
+# {
+#     "Data": [
+#     {
+#         "LoanId": "D20230729105897",
+#         "LoanOpenDate": "2023-07-29T18:08:47.503",
+#         "MemberAccount": "0050829       ",
+#         "MemberName": "BAPPY BESRA",
+#         "MemberMobileNo": "+8801815458842     ",
+#         "LoanAmount": 40000,
+#         "LoanBalance": 40000,
+#         "SuretyAmount": 1000,
+#         "StartDate": "2023-07-29T18:08:47.503",
+#         "EndDate": "2024-01-24T18:08:47.503",
+#         "Remarks": "",
+#         "LastPaidDate": "2023-08-07T00:00:00",
+#         "DefaulterStatus": false,
+#         "DefaultDetails": "",
+#         "SurityStatus": "Active Surety",
+#         "SuretyRelaseAmount": 1000
+#     },
+   
+# ],
+#     "Status": "success",
+#     "Message": null
+# }

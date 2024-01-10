@@ -1,0 +1,34 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "version": "v1",
+      "prodToken": "foo",
+      "nonProdToken": "bar"
+    },
+    "development": {
+      "version": "v2",
+      "host": "localhost",
+      "token": "",
+      "encrypted_login_data": "00*XwOEpho4AJmlvM7k4cQKz8aI5uEXdYyVeVAta1AOrdvp/XSlmc9S9MWE61YD1hTG2+jagR7MVMJ+jNCV2fGnbjKnn9ZMqlaejvixEuIzTo8onVb5XFNPyHjd0n821Uu1NlSgMIu+BwL46KEs8bMMmOFd5fKimMDnBxl9FNx6ATxFF6x1Y5GZDT3r4elpyl7Y/0lm5mrd27bPXCHmQtvEZDKtEXogm7feH2T2YZC5k2I/RS4sKDJQNLou6CaG5eAkyoHmTU0s02/kHc+YY6SCwThzdpBtlayyljxiy6KNfvC2ocM5ZvdXRGQ4iHfOoo3recn7ghecyvH9ZkRhqL4k6smk1XMWLH9dceTuhtK5GENyx32UmUVvVVrYcQw05PxF9TQOF2Vl5Z0H39+F8307tYQeEP5XtI3kvG7pp5t3qatQck+ELb0OYFMPOQMDpABgHoigQyr/UxygtylZtkAMjCxlt9jjEwvy2HyGCnQcedMD6xHJSTJHJaDZFM0ZbAb1aQy3o/txQUsZ2wXJczATSTU/3LCM+Dt9hbQMz/30XRqgRqgAGrpjMhLlvjk8D3ea",
+      "secretKey": "devSecret"
+    },
+    "parallel": {
+      "host": "http://pwebapi.cccul.com/api",
+      "token": "",
+      "encrypted_login_data": "00*XwOEpho4AJmlvM7k4cQKz8aI5uEXdYyVeVAta1AOrdvp/XSlmc9S9MWE61YD1hTG2+jagR7MVMJ+jNCV2fGnbjKnn9ZMqlaejvixEuIzTo8onVb5XFNPyHjd0n821Uu1NlSgMIu+BwL46KEs8bMMmOFd5fKimMDnBxl9FNx6ATxFF6x1Y5GZDT3r4elpyl7Y/0lm5mrd27bPXCHmQtvEZDKtEXogm7feH2T2YZC5k2I/RS4sKDJQNLou6CaG5eAkyoHmTU0s02/kHc+YY6SCwThzdpBtlayyljxiy6KNfvC2ocM5ZvdXRGQ4iHfOoo3recn7ghecyvH9ZkRhqL4k6smk1XMWLH9dceTuhtK5GENyx32UmUVvVVrYcQw05PxF9TQOF2Vl5Z0H39+F8307tYQeEP5XtI3kvG7pp5t3qatQck+ELb0OYFMPOQMDpABgHoigQyr/UxygtylZtkAMjCxlt9jjEwvy2HyGCnQcedMD6xHJSTJHJaDZFM0ZbAb1aQy3o/txQUsZ2wXJczATSTU/3LCM+Dt9hbQMz/30XRqgRqgAGrpjMhLlvjk8D3ea",
+      "secretKey": "prodSecret"
+    },
+    "staged": {
+      "host": "example.com",
+      "token": "",
+      "encrypted_login_data": "00*XwOEpho4AJmlvM7k4cQKz8aI5uEXdYyVeVAta1AOrdvp/XSlmc9S9MWE61YD1hTG2+jagR7MVMJ+jNCV2fGnbjKnn9ZMqlaejvixEuIzTo8onVb5XFNPyHjd0n821Uu1NlSgMIu+BwL46KEs8bMMmOFd5fKimMDnBxl9FNx6ATxFF6x1Y5GZDT3r4elpyl7Y/0lm5mrd27bPXCHmQtvEZDKtEXogm7feH2T2YZC5k2I/RS4sKDJQNLou6CaG5eAkyoHmTU0s02/kHc+YY6SCwThzdpBtlayyljxiy6KNfvC2ocM5ZvdXRGQ4iHfOoo3recn7ghecyvH9ZkRhqL4k6smk1XMWLH9dceTuhtK5GENyx32UmUVvVVrYcQw05PxF9TQOF2Vl5Z0H39+F8307tYQeEP5XtI3kvG7pp5t3qatQck+ELb0OYFMPOQMDpABgHoigQyr/UxygtylZtkAMjCxlt9jjEwvy2HyGCnQcedMD6xHJSTJHJaDZFM0ZbAb1aQy3o/txQUsZ2wXJczATSTU/3LCM+Dt9hbQMz/30XRqgRqgAGrpjMhLlvjk8D3ea",
+      "secretKey": "prodSecret"
+    },
+    "production": {
+      "host": "example.com",
+      "token": "",
+      "encrypted_login_data": "",
+      "secretKey": "prodSecret"
+    }
+  }
+}

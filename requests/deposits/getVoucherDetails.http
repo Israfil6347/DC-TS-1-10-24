@@ -1,0 +1,70 @@
+### Login Request
+# @name login
+POST {{host}}/Auth_V2/UserLogin
+Content-Type: application/json
+Accept: application/json
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "Password": "{{EncryptedPassword}}"
+}
+
+### Set Token
+@token = {{login.response.headers.Token}}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+### Get Voucher Details Request
+# @name getVoucherDetails
+POST {{host}}/deposits_V1/getVoucherDetails
+Content-Type: application/json
+Accept: application/json
+Token: {{token}}
+
+## Request Body
+{
+  "UserName": "{{UserName}}",
+  "UID": "{{ByUserId}}",
+  "ByUserId": "{{ByUserId}}",
+  "RolePermissionId": "6,1,1210",
+  "PersonId": "{{PersonId}}",
+  "EmployeeCode": "{{EmployeeCode}}",
+  "MobileNumber": "{{MobileNumber}}",
+  "MobileNo": "{{MobileNumber}}",
+  "Client": "Web Client",
+  "VoucherId": 6760815
+}
+
+# Response
+# {
+#   "Data": [
+#     {
+#       "TxnDate": "2023-08-08T10:36:00",
+#       "DrAmount": 0,
+#       "CrAmount": 1000,
+#       "Particular": "Pension Benefit Scheme",
+#       "VoucherDetailId": 22396203,
+#       "AccountId": 0,
+#       "InstrumentDate": null,
+#       "InstrumentNo": "",
+#       "InstrumentType": "",
+#       "Amount": 0,
+#       "IsCashReceived": 1,
+#       "TellerTypeCode": "00",
+#       "CreatedDate": "2023-08-08T10:35:44",
+#       "ApprovedDate": "0001-01-01T00:00:00",
+#       "VoucherId": 0,
+#       "VoucherNo": "RVDC202308080001",
+#       "TotalAmount": 0,
+#       "VoucherStageDate": "0001-01-01T00:00:00",
+#       "Originator": "TEST TEST TEST",
+#       "ScrollNo": "1",
+#       "FullName": "BAPPY BESRA",
+#       "AccountNo": "PBS-0000254",
+#       "TellerName": null
+#     }
+#   ],
+#   "Status": "success",
+#   "Message": null
+# }
